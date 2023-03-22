@@ -1,5 +1,11 @@
 Step by step
 
-# 1 npm run i
+# 1 - instal dependancy
 
-# 2 npm run dev
+`npm run i`
+
+# 2 - refere .env
+
+# 3 - launch dev serveur
+
+`npm run dev`
