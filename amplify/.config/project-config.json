@@ -1,5 +1,5 @@
 {
-  "projectName": "NVibeFront",
+  "projectName": "front",
   "version": "3.1",
   "frontend": "javascript",
   "javascript": {
@@ -11,5 +11,7 @@
       "StartCommand": "npm run start"
     }
   },
-  "providers": ["awscloudformation"]
+  "providers": [
+    "awscloudformation"
+  ]
 }
