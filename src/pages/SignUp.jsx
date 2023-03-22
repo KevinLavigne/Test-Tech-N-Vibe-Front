@@ -7,7 +7,7 @@ import notify from '../services/Toastify';
 import apiConnexion from '../services/apiConnexion';
 import UserContext from '../contexts/UserContext';
 
-export default function Login() {
+export default function SignUp() {
 	const navigate = useNavigate();
 
 	const { handleUser } = useContext(UserContext.Context);
@@ -23,12 +23,12 @@ export default function Login() {
 	const emailRegex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g;
 	const passwordRegex =
 		/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&-])[A-Za-z\d@$!%*?&-]{8,}/;
-	const LoginSend = async (e) => {
+	const SignUpSend = async (e) => {
 		e.preventDefault();
 		if (emailRegex.test(user.email) && passwordRegex.test(user.password)) {
 			try {
 				console.log(user);
-				const { data } = await apiConnexion.post('/login', user);
+				const { data } = await apiConnexion.put('/signup', user);
 				console.log(data);
 				handleUser({
 					email: data.email,
@@ -52,11 +52,11 @@ export default function Login() {
 			<div className="flex flex-col justify-center mb-10 items-center text-center  w-full">
 				<form
 					className="w-4/5 lg:w-1/3 border bg-slate-500 rounded-3xl"
-					onSubmit={(e) => LoginSend(e)}
+					onSubmit={(e) => SignUpSend(e)}
 				>
 					<div className="flex flex-col w-full p-4">
 						<h1 className="text-center font-semibold mb-4 text-white text-4xl">
-							Login
+							Sign up
 						</h1>
 						<label htmlFor="Email" className="flex justify-center mb-2">
 							<input
@@ -86,16 +86,16 @@ export default function Login() {
 							className="text-3xl w-fit self-center p-2 px-4 mt-1 rounded-3xl bg-slate-400 font-medium"
 							type="submit"
 						>
-							Login
+							Sign up
 						</button>
 					</div>
 				</form>
 				<div className=" absolute top-[4vh] right-[2vh]">
 					<NavLink
 						className="text-3xl py-2 px-4 bg-slate-400 rounded-3xl"
-						to="/SignUp"
+						to="/"
 					>
-						Sign up
+						Sign in
 					</NavLink>
 				</div>
 			</div>

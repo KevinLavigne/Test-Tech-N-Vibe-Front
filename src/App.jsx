@@ -9,6 +9,7 @@ import userContext from './contexts/UserContext';
 
 import './App.css';
 import 'react-toastify/dist/ReactToastify.css';
+import SignUp from './pages/SignUp';
 
 function App() {
 	const { user } = useContext(userContext.Context);
@@ -16,6 +17,7 @@ function App() {
 		<BrowserRouter>
 			<Routes>
 				<Route path="/" element={<Login />} />
+				<Route path="/SignUp" element={<SignUp />} />
 				<Route path="/user" element={<ProtectedRoute user={user} />}>
 					<Route path="home" element={<Home />}></Route>
 				</Route>
