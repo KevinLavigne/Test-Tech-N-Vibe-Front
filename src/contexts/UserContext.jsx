@@ -1,28 +1,28 @@
-import { createContext, useState } from 'react';
+import { createContext, useState } from "react";
 
 const Context = createContext();
 
 function Provider({ children }) {
-	const [user, setUser] = useState(JSON.parse(sessionStorage.getItem('user')));
+  const [user, setUser] = useState(JSON.parse(sessionStorage.getItem("user")));
 
-	const handleUser = (value) => {
-		sessionStorage.setItem('user', JSON.stringify(value));
-		setUser(value);
-	};
+  const handleUser = (value) => {
+    sessionStorage.setItem("user", JSON.stringify(value));
+    setUser(value);
+  };
 
-	return (
-		<Context.Provider
-			value={{
-				user,
-				handleUser,
-			}}
-		>
-			{children}
-		</Context.Provider>
-	);
+  return (
+    <Context.Provider
+      value={{
+        user,
+        handleUser,
+      }}
+    >
+      {children}
+    </Context.Provider>
+  );
 }
 const ExportContext = {
-	Context,
-	Provider,
+  Context,
+  Provider,
 };
 export default ExportContext;

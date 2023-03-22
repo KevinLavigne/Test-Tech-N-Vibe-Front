@@ -1,11 +1,11 @@
-import { Navigate, Outlet } from 'react-router-dom';
+import { Navigate, Outlet } from "react-router-dom";
 
 function ProtectedRoute({ user }) {
-	if (!user.email) {
-		return <Navigate to="/login" replace />;
-	}
+  if (!user.email) {
+    return <Navigate to="/login" replace />;
+  }
 
-	return <Outlet />;
+  return <Outlet />;
 }
 
 export default ProtectedRoute;
