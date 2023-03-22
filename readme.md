@@ -1,5 +1,5 @@
 Step by step
 
-# 1 npm run i
+# 1 - npm run i
 
-# 2 npm run dev
+# 2 - npm run dev
