@@ -10,6 +10,14 @@
       "StackName": "amplify-front-dev-132323",
       "StackId": "arn:aws:cloudformation:eu-north-1:889469275108:stack/amplify-front-dev-132323/57a40310-c8ac-11ed-81cb-06a14b0e7e68",
       "AmplifyAppId": "d18intnx2rna5z"
+    },
+    "categories": {
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d18intnx2rna5z",
+          "type": "cicd"
+        }
+      }
     }
   }
 }
